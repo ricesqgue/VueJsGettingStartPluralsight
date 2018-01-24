@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Growler</title>
+</head>
+<body>
+
+    <div id="growler">
+        <img :src="imgLogo" style="height: 36px" alt="">
+        <h2 v-text="appName"></h2>
+        <h2 v-html="appLink"></h2>
+        <span v-bind:style="[cssColor, cssFont]">Red</span>
+        <h2 :style="{ color: isOnline ? 'green' : 'red' }">Connected</h2>
+        <input type="text" v-model.lazy="appName" />
+        <input type="checkbox" v-model="isOnline">
+        <input type="checkbox" value="opcion1" v-model="checkboxes">
+        <input type="checkbox" value="opcion2" v-model="checkboxes">
+        <h3>{{ checkboxes }}</h3>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./app.js"></script>
+</body>
+</html>
